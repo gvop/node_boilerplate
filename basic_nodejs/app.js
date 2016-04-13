@@ -33,15 +33,6 @@ app.use(methodOverride(function(req, res){
   }
 }));
 
-
-//Auth authentication 
-var jwtCheck = jwt({
-  secret: new Buffer('9qt05i5WOYTBFJncBBE6sur2Lj-9M1y4P5v8M8cDca11GrxDwIpGoV2VqfWW5x6K', 'base64'),
-  audience: '4Y8O3igLBwrgXm2vD0PyEphKhftTXzJy'
-});
-
-app.use("/api/applicants", jwtCheck);
-
 app.use(routes);
 // Setup static files form public folder
 app.use(express.static(__dirname + '/public'));
